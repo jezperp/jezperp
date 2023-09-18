@@ -1,6 +1,6 @@
 <template>
     <main>
-        <p class="m-0 rounded bg-dark text-white py-1 px-2">Welcome</p>
+        <h1>Welcome</h1>
     </main>
 </template>
 <script setup>
