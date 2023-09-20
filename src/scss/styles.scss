@@ -12,20 +12,92 @@ body {
     padding: 2rem;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    width: 100%;
+    opacity: 0;
+    &.show {
+        opacity: 1;
+    }
+    .menu {
+        display: block;
+        height: 1.5rem;
+        width: 2rem;
+        position: relative;
+        &:hover {
+            background: none;
+            span {
+                width: 100%;
+                &:first-child,
+                &:last-child {
+                    width: 50%;
+                }
+            }
+        }
+        span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: #fff;
+            height: 2px;
+            width: 50%;
+            transition: all .5s ease;
+            &:first-child,
+            &:last-child {
+                width: 100%;
+                transform: none;
+            }
+            &:first-child {
+                top: 0;
+            }
+            &:last-child {
+                top: auto;
+                bottom: 0;
+            }
+        }
+    }
+}
+
 h1 {
     font-size: calc(2.375rem + 2.5vw);
     font-weight: 700;
-    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 1000% 1000%;
-    animation: rainbow 40s ease infinite;
-    transition: all 3s ease;
-    opacity: 0;
-    height: 0;
+    color: #fff;
+    transition: all 2s ease;
     margin: 0;
+    &.animated {
+        height: 0;
+        opacity: 0;
+        transform: scale(0.5);
+        background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 1000% 1000%;
+        animation: rainbow 40s ease infinite;
+    }
     &.show {
         opacity: 1;
         height: auto;
+        transform: scale(1);
+    }
+}
+
+a {
+    opacity: .7;
+    transition: all 1s ease;
+    
+    &.animated {
+        opacity: 0;
+    }
+    &.show {
+        opacity: .7;
+    }
+    &:hover {
+        background: none;
+        opacity: 1;
     }
 }
