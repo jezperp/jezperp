@@ -1,0 +1,50 @@
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    width: 100%;
+    opacity: 0;
+    transition: all 2s ease;
+    &.show {
+        opacity: 1;
+    }
+    .menu {
+        display: block;
+        height: 1.5rem;
+        width: 2rem;
+        position: relative;
+        &:hover {
+            background: none;
+            span {
+                width: 100%;
+                &:first-child,
+                &:last-child {
+                    width: 50%;
+                }
+            }
+        }
+        span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: #fff;
+            height: 2px;
+            width: 50%;
+            transition: all .5s ease;
+            &:first-child,
+            &:last-child {
+                width: 100%;
+                transform: none;
+            }
+            &:first-child {
+                top: 0;
+            }
+            &:last-child {
+                top: auto;
+                bottom: 0;
+            }
+        }
+    }
+}

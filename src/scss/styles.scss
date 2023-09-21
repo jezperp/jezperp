@@ -1,66 +1,43 @@
-@import "bootstrap/scss/bootstrap";
-@import "./keyframes";
+/* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
-
+/* bootstrap functions */
+@import "bootstrap/scss/functions";
+/* custom variables */
+@import "./variables";
+/* bootstrap variables */
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+/* required bootstrap */
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+/* optional bootstrap */
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+/* keyframes */
+@import "./keyframes/rainbow";
+/* custom components */
+@import "./components/header";
+/* custom css*/
 body {
     background: #191919;
-    font-family: 'Mooli', sans-serif;
+    display: flex;
+    place-items: center;
 }
 
 #app {
+    display: grid;
     grid-template-columns: 1fr;
     padding: 2rem;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 2rem;
-    width: 100%;
-    opacity: 0;
-    &.show {
-        opacity: 1;
-    }
-    .menu {
-        display: block;
-        height: 1.5rem;
-        width: 2rem;
-        position: relative;
-        &:hover {
-            background: none;
-            span {
-                width: 100%;
-                &:first-child,
-                &:last-child {
-                    width: 50%;
-                }
-            }
-        }
-        span {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            background: #fff;
-            height: 2px;
-            width: 50%;
-            transition: all .5s ease;
-            &:first-child,
-            &:last-child {
-                width: 100%;
-                transform: none;
-            }
-            &:first-child {
-                top: 0;
-            }
-            &:last-child {
-                top: auto;
-                bottom: 0;
-            }
-        }
-    }
-}
+
 
 h1 {
     font-size: calc(2.375rem + 2.5vw);

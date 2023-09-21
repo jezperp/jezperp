@@ -4,6 +4,7 @@
             <div class="row align-items-center">
                 <div class="col">
                     <h3 class="m-0 text-white">Jesper Pettersson</h3>
+                    <p class="m-0 text-white">a senior front-end web developer based in Stockholm</p>
                 </div>
                 <div class="col-auto ml-auto">
                     <a  href="#"
@@ -18,7 +19,7 @@
         </header>
         <section    id="home"
                     class="text-center">
-            <div class="pt-5 pb-3">
+            <div class="p-3">
                 <h1 class="animated"
                     :class="tkey === index ? 'show' : null"
                     v-html="text"
@@ -46,9 +47,9 @@
                     } else {
                         setTimeout(() => {
                             this.showHeader = true
-                        }, 2000)
+                        }, 1000)
                     }
-                }, 2500)
+                }, 2000)
             }
         },
         mounted() {
